@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.from django.db import models
-
 class SingletonModel(models.Model):
 
     class Meta:
@@ -18,6 +16,3 @@ class SingletonModel(models.Model):
     def load(cls):
         obj, created = cls.objects.get_or_create(pk=1)
         return obj
-        
-class MLStatus(SingletonModel):
-    allow = models.BooleanField(default='False')
